@@ -35,74 +35,106 @@
     "workbench.navigationControl.enabled": false,
 
     //Color theme
-    "workbench.colorTheme": "Nord",
+    "workbench.colorTheme": "Atom One Dark",
     "breadcrumbs.enabled": false,
     "window.autoDetectColorScheme": true,
-    "workbench.preferredLightColorTheme": "Nord",
-    "workbench.preferredDarkColorTheme": "Nord",
+    "workbench.preferredLightColorTheme": "Atom One Light",
     "editor.accessibilitySupport": "off",
 
     // Vim Keybinds
     "vim.leader": " ",
     "vim.normalModeKeyBindings": [
     {
+    // Add current editor to harpoon for quick access
     "before": ["<leader>", "a"],
     "commands": ["vscode-harpoon.addEditor"]
     },
     {
+    // Edit/manage harpoon editor list
     "before": ["<leader>", "e"],
     "commands": ["vscode-harpoon.editEditors"]
     },
     {
+    // Quick pick from harpoon editors
     "before": ["<leader>", "p", "e"],
     "commands": ["vscode-harpoon.editorQuickPick"]
     },
     {
+    // Jump to harpoon editor slot 1
     "before": ["<leader>", "1"],
     "commands": ["vscode-harpoon.gotoEditor1"]
     },
     {
+    // Jump to harpoon editor slot 2
     "before": ["<leader>", "2"],
     "commands": ["vscode-harpoon.gotoEditor2"]
     },
     {
+    // Jump to harpoon editor slot 3
     "before": ["<leader>", "3"],
     "commands": ["vscode-harpoon.gotoEditor3"]
     },
     {
+    // Jump to harpoon editor slot 4
     "before": ["<leader>", "4"],
     "commands": ["vscode-harpoon.gotoEditor4"]
     },
     {
+    // Global search using periscope extension
     "before": ["<leader>", "f","g"],
     "commands": ["periscope.search"]
     },
     {
+    // Show all editors by most recently used
     "before": ["<leader>", "<leader>"],
     "commands": ["search-preview.showAllEditorsByMostRecentlyUsed"]
     },
     {
+    // Quick open file with preview
     "before": ["<leader>", "f","f"],
     "commands": ["search-preview.quickOpenWithPreview"]
     },
     {
+    // Toggle lazygit integration
     "before": ["<leader>", "l","g"],
     "commands": ["lazygit-vscode.toggle"]
     },
     {
+    // Go to definition of symbol under cursor
     "before": ["<leader>", "g","d"],
     "commands": ["editor.action.revealDefinition"]
     },
     {
+    // Format current document
     "before": ["<leader>", "g","f"],
     "commands": ["editor.action.formatDocument"]
     },
     {
-        "before": ["-"],
-        "commands": ["vsnetrw.open"],
-        "when": "editorLangId != vsnetrw"
+    // Yank to system clipboard
+    "before": ["<leader>", "y"],
+    "after": ["\"", "+", "y"]
+    },
+    {
+    // Paste from system clipboard
+    "before": ["<leader>", "p"],
+    "after": ["\"", "+", "p"]
+    },
+    {
+    // Open file explorer (vsnetrw)
+    "before": ["-"],
+    "commands": ["vsnetrw.open"],
+    "when": "editorLangId != vsnetrw"
+    },    
+    ],
+
+    "vim.visualModeKeyBindingsNonRecursive": [
+    {
+    // Yank selection to system clipboard in visual mode
+    "before": ["<leader>", "y"],
+    "after": ["\"", "+", "y"]
     }
     ],
+
 
     //Best Extension Ever
     "searchPreview.search.excludePatterns": [
@@ -163,5 +195,10 @@
     },
     "[css]": {
         "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
-    }
+    },
+    "workbench.preferredDarkColorTheme": "Atom One Dark",
+    "editor.fontSize": 14,
+    "[jsonc]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
 }
