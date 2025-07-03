@@ -3,6 +3,7 @@
     "workbench.sideBar.location": "right",
     "git.autofetch": true,
     "workbench.iconTheme": "material-icon-theme",
+    "editor.fontSize": 14,
     "editor.fontFamily": "'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
     "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
     "editor.inlayHints.fontFamily": "'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
@@ -16,7 +17,6 @@
     "editor.stickyScroll.enabled": false,
     "material-icon-theme.opacity": 1,
     "git.enableSmartCommit": true,
-    "vim.smartRelativeLine": true,
     "editor.lineNumbers": "relative",
     "git.confirmSync": false,
     "gitlens.views.scm.grouped.views": {
@@ -33,108 +33,25 @@
     },
     "workbench.layoutControl.enabled": false,
     "workbench.navigationControl.enabled": false,
+    "workbench.activityBar.orientation": "vertical",
+    "workbench.activityBar.location": "hidden",
+
+    
+    //Vim Settings
+    "vim.incsearch": true,
+    "vim.smartRelativeLine": true,
+    "vim.surround": true,
+    "extensions.experimental.affinity": {
+    "vscodevim.vim": 1,
+    "vim.highlightedyank.enable": true,
+    },
 
     //Color theme
     "workbench.colorTheme": "Atom One Dark",
+    "workbench.preferredLightColorTheme": "Atom One Light",
     "breadcrumbs.enabled": false,
     "window.autoDetectColorScheme": true,
-    "workbench.preferredLightColorTheme": "Atom One Light",
     "editor.accessibilitySupport": "off",
-
-    // Vim Keybinds
-    "vim.leader": " ",
-    "vim.normalModeKeyBindings": [
-    {
-    // Add current editor to harpoon for quick access
-    "before": ["<leader>", "a"],
-    "commands": ["vscode-harpoon.addEditor"]
-    },
-    {
-    // Edit/manage harpoon editor list
-    "before": ["<leader>", "e"],
-    "commands": ["vscode-harpoon.editEditors"]
-    },
-    {
-    // Quick pick from harpoon editors
-    "before": ["<leader>", "p", "e"],
-    "commands": ["vscode-harpoon.editorQuickPick"]
-    },
-    {
-    // Jump to harpoon editor slot 1
-    "before": ["<leader>", "1"],
-    "commands": ["vscode-harpoon.gotoEditor1"]
-    },
-    {
-    // Jump to harpoon editor slot 2
-    "before": ["<leader>", "2"],
-    "commands": ["vscode-harpoon.gotoEditor2"]
-    },
-    {
-    // Jump to harpoon editor slot 3
-    "before": ["<leader>", "3"],
-    "commands": ["vscode-harpoon.gotoEditor3"]
-    },
-    {
-    // Jump to harpoon editor slot 4
-    "before": ["<leader>", "4"],
-    "commands": ["vscode-harpoon.gotoEditor4"]
-    },
-    {
-    // Global search using periscope extension
-    "before": ["<leader>", "f","g"],
-    "commands": ["periscope.search"]
-    },
-    {
-    // Show all editors by most recently used
-    "before": ["<leader>", "<leader>"],
-    "commands": ["search-preview.showAllEditorsByMostRecentlyUsed"]
-    },
-    {
-    // Quick open file with preview
-    "before": ["<leader>", "f","f"],
-    "commands": ["search-preview.quickOpenWithPreview"]
-    },
-    {
-    // Toggle lazygit integration
-    "before": ["<leader>", "l","g"],
-    "commands": ["lazygit-vscode.toggle"]
-    },
-    {
-    // Go to definition of symbol under cursor
-    "before": ["<leader>", "g","d"],
-    "commands": ["editor.action.revealDefinition"]
-    },
-    {
-    // Format current document
-    "before": ["<leader>", "g","f"],
-    "commands": ["editor.action.formatDocument"]
-    },
-    {
-    // Yank to system clipboard
-    "before": ["<leader>", "y"],
-    "after": ["\"", "+", "y"]
-    },
-    {
-    // Paste from system clipboard
-    "before": ["<leader>", "p"],
-    "after": ["\"", "+", "p"]
-    },
-    {
-    // Open file explorer (vsnetrw)
-    "before": ["-"],
-    "commands": ["vsnetrw.open"],
-    "when": "editorLangId != vsnetrw"
-    },    
-    ],
-
-    "vim.visualModeKeyBindingsNonRecursive": [
-    {
-    // Yank selection to system clipboard in visual mode
-    "before": ["<leader>", "y"],
-    "after": ["\"", "+", "y"]
-    }
-    ],
-
 
     //Best Extension Ever
     "searchPreview.search.excludePatterns": [
@@ -148,20 +65,22 @@
 
     "searchPreview.search.excludeDirectories": [
 
+
         "node_modules",
         ".next",
         ".git",
         "venv",
         "env",
         "dist",
-        "build"
+        "build",
+        "android",
+        "ios"
     ],
 
     //Python Formatting
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "animations.Install-Method": "Apc Customize UI++",
     "explorer.fileNesting.patterns": {
         "*.ts": "${capture}.js",
         "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
@@ -194,11 +113,19 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[css]": {
-        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.preferredDarkColorTheme": "Atom One Dark",
-    "editor.fontSize": 14,
     "[jsonc]": {
-        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.replaceTagsWhenPull": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
 }
